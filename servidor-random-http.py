@@ -31,10 +31,10 @@ try:
         print(recvSocket.recv(2048))
         print('Answering back...')
         num = random.randrange(999999999)
-        url = 'http://localhost:1234/' + str(num)
+        #url = 'http://localhost:1234/' + str(num)
         recvSocket.send(b"HTTP/1.1 200 OK\r\n\r\n" +
-                        b"<html><body><h1>Hola. <a href='" +
-                        bytes(url, 'utf-8') +
+                        b"<html><body><h1>Hola. <a href='/" +
+                        bytes(str(num), 'utf-8') +
                         b"'>Dame otra<a/>" +
                         b"</body></h1></html>\r\n")
         recvSocket.close()
